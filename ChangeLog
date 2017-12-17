@@ -1,3 +1,102 @@
+version 2017.12.14
+
+Core
+* [postprocessor/xattr] Clarify NO_SPACE message (#14970)
+* [downloader/http] Return actual download result from real_download (#14971)
+
+Extractors
++ [itv] Extract more subtitles and duration
+* [itv] Improve extraction (#14944)
++ [byutv] Add support for geo restricted videos
+* [byutv] Fix extraction (#14966, #14967)
++ [bbccouk] Fix extraction for 320k HLS streams
++ [toutv] Add support for special video URLs (#14179)
+* [discovery] Fix free videos extraction (#14157, #14954)
+* [tvnow] Fix extraction (#7831)
++ [nickelodeon:br] Add support for nickelodeon brazil websites (#14893)
+* [nick] Improve extraction (#14876)
+* [tbs] Fix extraction (#13658)
+
+
+version 2017.12.10
+
+Core
++ [utils] Add sami mimetype to mimetype2ext
+
+Extractors
+* [culturebox] Improve video id extraction (#14947)
+* [twitter] Improve extraction (#14197)
++ [udemy] Extract more HLS formats
+* [udemy] Improve course id extraction (#14938)
++ [stretchinternet] Add support for portal.stretchinternet.com (#14576)
+* [ellentube] Fix extraction (#14407, #14570)
++ [raiplay:playlist] Add support for playlists (#14563)
+* [sonyliv] Bypass geo restriction
+* [sonyliv] Extract higher quality formats (#14922)
+* [fox] Extract subtitles
++ [fox] Add support for Adobe Pass authentication (#14205, #14489)
+- [dailymotion:cloud] Remove extractor (#6794)
+* [xhamster] Fix thumbnail extraction (#14780)
++ [xhamster] Add support for mobile URLs (#14780)
+* [generic] Don't pass video id as mpd id while extracting DASH (#14902)
+* [ard] Skip invalid stream URLs (#14906)
+* [porncom] Fix metadata extraction (#14911)
+* [pluralsight] Detect agreement request (#14913)
+* [toutv] Fix login (#14614)
+
+
+version 2017.12.02
+
+Core
++ [downloader/fragment] Commit part file after each fragment
++ [extractor/common] Add durations for DASH fragments with bare SegmentURLs
++ [extractor/common] Add support for DASH manifests with SegmentLists with
+  bare SegmentURLs (#14844)
++ [utils] Add hvc1 codec code to parse_codecs
+
+Extractors
+* [xhamster] Fix extraction (#14884)
+* [youku] Update ccode (#14872)
+* [mnet] Fix format extraction (#14883)
++ [xiami] Add Referer header to API request
+* [mtv] Correct scc extention in extracted subtitles (#13730)
+* [vvvvid] Fix extraction for kenc videos (#13406)
++ [br] Add support for BR Mediathek videos (#14560, #14788)
++ [daisuki] Add support for motto.daisuki.com (#14681)
+* [odnoklassniki] Fix API metadata request (#14862)
+* [itv] Fix HLS formats extraction
++ [pbs] Add another media id regular expression
+
+
+version 2017.11.26
+
+Core
+* [extractor/common] Use final URL when dumping request (#14769)
+
+Extractors
+* [fczenit] Fix extraction
+- [firstpost] Remove extractor
+* [freespeech] Fix extraction
+* [nexx] Extract more formats
++ [openload] Add support for openload.link (#14763)
+* [empflix] Relax URL regular expression
+* [empflix] Fix extractrion
+* [tnaflix] Don't modify download URLs (#14811)
+- [gamersyde] Remove extractor
+* [francetv:generationwhat] Fix extraction
++ [massengeschmacktv] Add support for Massengeschmack TV
+* [fox9] Fix extraction
+* [faz] Fix extraction and add support for Perform Group embeds (#14714)
++ [performgroup] Add support for performgroup.com
++ [jwplatform] Add support for iframes (#14828)
+* [culturebox] Fix extraction (#14827)
+* [youku] Fix extraction; update ccode (#14815)
+* [livestream] Make SMIL extraction non fatal (#14792)
++ [drtuber] Add support for mobile URLs (#14772)
++ [spankbang] Add support for mobile URLs (#14771)
+* [instagram] Fix description, timestamp and counters extraction (#14755)
+
+
 version 2017.11.15
 
 Core

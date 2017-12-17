@@ -59,10 +59,7 @@ from .tnaflix import TNAFlixNetworkEmbedIE
 from .drtuber import DrTuberIE
 from .redtube import RedTubeIE
 from .vimeo import VimeoIE
-from .dailymotion import (
-    DailymotionIE,
-    DailymotionCloudIE,
-)
+from .dailymotion import DailymotionIE
 from .dailymail import DailyMailIE
 from .onionstudios import OnionStudiosIE
 from .viewlift import ViewLiftEmbedIE
@@ -1099,9 +1096,9 @@ class GenericIE(InfoExtractor):
         },
         # jwplayer rtmp
         {
-            'url': 'http://www.suffolk.edu/sjc/',
+            'url': 'http://www.suffolk.edu/sjc/live.php',
             'info_dict': {
-                'id': 'sjclive',
+                'id': 'live',
                 'ext': 'flv',
                 'title': 'Massachusetts Supreme Judicial Court Oral Arguments',
                 'uploader': 'www.suffolk.edu',
@@ -1109,7 +1106,7 @@ class GenericIE(InfoExtractor):
             'params': {
                 'skip_download': True,
             },
-            'skip': 'does not contain a video anymore',
+            'skip': 'Only has video a few mornings per month, see http://www.suffolk.edu/sjc/',
         },
         # Complex jwplayer
         {
@@ -1135,6 +1132,19 @@ class GenericIE(InfoExtractor):
             'params': {
                 'skip_download': True,
             }
+        },
+        {
+            # JWPlatform iframe
+            'url': 'https://www.mediaite.com/tv/dem-senator-claims-gary-cohn-faked-a-bad-connection-during-trump-call-to-get-him-off-the-phone/',
+            'md5': 'ca00a040364b5b439230e7ebfd02c4e9',
+            'info_dict': {
+                'id': 'O0c5JcKT',
+                'ext': 'mp4',
+                'upload_date': '20171122',
+                'timestamp': 1511366290,
+                'title': 'Dem Senator Claims Gary Cohn Faked a Bad Connection During Trump Call to Get Him Off the Phone',
+            },
+            'add_ie': [JWPlatformIE.ie_key()],
         },
         {
             # Video.js embed, multiple formats
@@ -1458,23 +1468,6 @@ class GenericIE(InfoExtractor):
                 'upload_date': '20150525',
                 'timestamp': 1432570283,
             },
-        },
-        # Dailymotion Cloud video
-        {
-            'url': 'http://replay.publicsenat.fr/vod/le-debat/florent-kolandjian,dominique-cena,axel-decourtye,laurence-abeille,bruno-parmentier/175910',
-            'md5': 'dcaf23ad0c67a256f4278bce6e0bae38',
-            'info_dict': {
-                'id': 'x2uy8t3',
-                'ext': 'mp4',
-                'title': 'Sauvons les abeilles ! - Le débat',
-                'description': 'md5:d9082128b1c5277987825d684939ca26',
-                'thumbnail': r're:^https?://.*\.jpe?g$',
-                'timestamp': 1434970506,
-                'upload_date': '20150622',
-                'uploader': 'Public Sénat',
-                'uploader_id': 'xa9gza',
-            },
-            'skip': 'File not found.',
         },
         # OnionStudios embed
         {
@@ -2182,7 +2175,7 @@ class GenericIE(InfoExtractor):
                 return self.playlist_result(self._parse_xspf(doc, video_id), video_id)
             elif re.match(r'(?i)^(?:{[^}]+})?MPD$', doc.tag):
                 info_dict['formats'] = self._parse_mpd_formats(
-                    doc, video_id,
+                    doc,
                     mpd_base_url=compat_str(full_response.geturl()).rpartition('/')[0],
                     mpd_url=url)
                 self._sort_formats(info_dict['formats'])
@@ -2690,11 +2683,6 @@ class GenericIE(InfoExtractor):
         senate_isvp_url = SenateISVPIE._search_iframe_url(webpage)
         if senate_isvp_url:
             return self.url_result(senate_isvp_url, 'SenateISVP')
-
-        # Look for Dailymotion Cloud videos
-        dmcloud_url = DailymotionCloudIE._extract_dmcloud_url(webpage)
-        if dmcloud_url:
-            return self.url_result(dmcloud_url, 'DailymotionCloud')
 
         # Look for OnionStudios embeds
         onionstudios_url = OnionStudiosIE._extract_url(webpage)

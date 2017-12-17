@@ -112,16 +112,16 @@
  - **BokeCC**
  - **BostonGlobe**
  - **Bpb**: Bundeszentrale für politische Bildung
- - **BR**: Bayerischer Rundfunk Mediathek
+ - **BR**: Bayerischer Rundfunk
  - **BravoTV**
  - **Break**
  - **brightcove:legacy**
  - **brightcove:new**
+ - **BRMediathek**: Bayerischer Rundfunk Mediathek
  - **bt:article**: Bergens Tidende Articles
  - **bt:vestlendingen**: Bergens Tidende - Vestlendingen
  - **BuzzFeed**
  - **BYUtv**
- - **BYUtvEvent**
  - **Camdemy**
  - **CamdemyFolder**
  - **CamWithHer**
@@ -197,9 +197,8 @@
  - **dailymotion**
  - **dailymotion:playlist**
  - **dailymotion:user**
- - **DailymotionCloud**
- - **Daisuki**
- - **DaisukiPlaylist**
+ - **DaisukiMotto**
+ - **DaisukiMottoPlaylist**
  - **daum.net**
  - **daum.net:clip**
  - **daum.net:playlist**
@@ -242,8 +241,9 @@
  - **eHow**
  - **Einthusan**
  - **eitb.tv**
- - **EllenTV**
- - **EllenTV:clips**
+ - **EllenTube**
+ - **EllenTubePlaylist**
+ - **EllenTubeVideo**
  - **ElPais**: El País
  - **Embedly**
  - **EMPFlix**
@@ -266,10 +266,8 @@
  - **fc2**
  - **fc2:embed**
  - **Fczenit**
- - **fernsehkritik.tv**
  - **filmon**
  - **filmon:channel**
- - **Firstpost**
  - **FiveTV**
  - **Flickr**
  - **Flipagram**
@@ -283,7 +281,7 @@
  - **foxnews:article**
  - **foxnews:insider**
  - **FoxSports**
- - **france2.fr:generation-quoi**
+ - **france2.fr:generation-what**
  - **FranceCulture**
  - **FranceInter**
  - **FranceTV**
@@ -301,7 +299,6 @@
  - **GameInformer**
  - **GameOne**
  - **gameone:playlist**
- - **Gamersyde**
  - **GameSpot**
  - **GameStar**
  - **Gaskrank**
@@ -441,6 +438,7 @@
  - **mangomolo:live**
  - **mangomolo:video**
  - **ManyVids**
+ - **massengeschmack.tv**
  - **MatchTV**
  - **MDR**: MDR.DE and KiKA
  - **media.ccc.de**
@@ -539,6 +537,7 @@
  - **nhl.com:videocenter:category**: NHL videocenter category
  - **nick.com**
  - **nick.de**
+ - **nickelodeon:br**
  - **nickelodeonru**
  - **nicknight**
  - **niconico**: ニコニコ動画
@@ -557,8 +556,6 @@
  - **nowness**
  - **nowness:playlist**
  - **nowness:series**
- - **NowTV** (Currently broken)
- - **NowTVList**
  - **nowvideo**: NowVideo
  - **Noz**
  - **npo**: npo.nl, ntr.nl, omroepwnl.nl, zapp.nl and npo3.nl
@@ -608,6 +605,7 @@
  - **pcmag**
  - **PearVideo**
  - **People**
+ - **PerformGroup**
  - **periscope**: Periscope
  - **periscope:user**: Periscope user videos
  - **PhilharmonieDeParis**: Philharmonie de Paris
@@ -662,6 +660,7 @@
  - **Rai**
  - **RaiPlay**
  - **RaiPlayLive**
+ - **RaiPlayPlaylist**
  - **RBMARadio**
  - **RDS**: RDS.ca
  - **RedBullTV**
@@ -781,6 +780,7 @@
  - **streamcloud.eu**
  - **StreamCZ**
  - **StreetVoice**
+ - **StretchInternet**
  - **SunPorno**
  - **SVT**
  - **SVTPlay**: SVT Play and Öppet arkiv
@@ -792,7 +792,7 @@
  - **tagesschau:player**
  - **Tass**
  - **TastyTrade**
- - **TBS** (Currently broken)
+ - **TBS**
  - **TDSLifeway**
  - **teachertube**: teachertube.com videos
  - **teachertube:user:collection**: teachertube.com user and collection videos
@@ -863,6 +863,8 @@
  - **tvland.com**
  - **TVN24**
  - **TVNoe**
+ - **TVNow**
+ - **TVNowList**
  - **tvp**: Telewizja Polska
  - **tvp:embed**: Telewizja Polska
  - **tvp:series**

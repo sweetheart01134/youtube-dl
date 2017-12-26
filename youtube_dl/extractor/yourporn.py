@@ -31,7 +31,7 @@ class YourPornIE(InfoExtractor):
         webpage = self._download_webpage(url, video_id)
         title = self._og_search_title(webpage)
         print(title)
-        soup = BeautifulSoup(webpage)
+        soup = BeautifulSoup(webpage,"html.parser")
         video_frame = soup.find('div',attrs={'itemprop':'video'})
         video_url = video_frame.find('video',attrs={'id':'player_el'})['src']
         description = video_frame.find('meta',attrs={'itemprop':'description'})['content']
